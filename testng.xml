@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Naukri Suite">
+
+    <test name="Smoke Test">
+
+        <classes>
+            <class name="com.naukri.tests.LoginTest"/>
+        </classes>
+
+    </test>
+
+</suite>

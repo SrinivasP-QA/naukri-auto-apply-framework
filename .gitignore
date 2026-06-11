@@ -1,0 +1,9 @@
+target/
+logs/
+reports/
+screenshots/
+.vscode/
+
+*.log
+
+src/test/resources/config/qa.properties
