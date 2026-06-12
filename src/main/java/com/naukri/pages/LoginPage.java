@@ -11,7 +11,7 @@ public class LoginPage {
     WaitUtils waitUtils;
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+        this.driver = driver; 
         waitUtils = new WaitUtils(driver);
     }
 
@@ -26,6 +26,21 @@ public class LoginPage {
 
     private By loginButton =
             By.xpath("//button[@type='submit']");
+
+
+    private By completeProfile = 
+            By.xpath("//a[text()='Complete']");      
+            
+    private By editontheme = 
+            By.xpath("//em[text()='editOneTheme']");
+            
+    private By savbutton = 
+            By.xpath("//button[text()='Save']");
+            
+    private By lastupdate = 
+            By.xpath("//span[@class='typ-14Regular mode-date-wrap ']");
+            
+                   
 
 
 
@@ -60,4 +75,28 @@ public class LoginPage {
         enterPassword(pwd);
         clickLoginButton();
     }
+
+
+  public void clickoncompleteProfile() {
+   
+    waitUtils.click(completeProfile);
+    System.out.println("Complete Profile Clicked");
+}
+
+    public void editOneTheme(){
+        waitUtils.click(editontheme);
+        System.out.println("Edit One Theme Clicked");
+    }
+
+    public void saveChanges(){
+        waitUtils.click(savbutton);
+        System.out.println("Save Button Clicked");
+    }
+
+    public String getLastUpdateTime() {
+        String lastUpdate = driver.findElement(lastupdate).getText();
+        System.out.println("Last Update Time: " + lastUpdate);
+        return lastUpdate;
+    }
+
 }

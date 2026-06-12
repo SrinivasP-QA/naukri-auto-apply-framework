@@ -8,7 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LoginSteps {
+public class LoginSteps { 
 
     LoginPage loginPage =
             new LoginPage(DriverFactory.getDriver());
@@ -47,4 +47,25 @@ public void enterCredentials() {
 
         System.out.println("Login Successful");
     }
+
+    @Then("user clicks on the complete profile")
+    public void clickCompleteProfile() {
+
+        loginPage.clickoncompleteProfile();
+    }
+
+    @Then("clicks on icon edit and clicks on Save and print a message of profile last update today")
+    public void clickEditAndSave()
+    {
+          loginPage.editOneTheme();
+          loginPage.saveChanges();
+          loginPage.getLastUpdateTime();
+    }
+
+
+
+
+
+
+
 }
