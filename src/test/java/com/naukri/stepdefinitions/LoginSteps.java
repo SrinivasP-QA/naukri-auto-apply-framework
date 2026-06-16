@@ -61,7 +61,12 @@ public void enterCredentials() {
           loginPage.saveChanges();
           loginPage.getLastUpdateTime();
     }
+    @Then("User clicks on crosslayer and display a message of Profile updated successfull")
+    public void clickCrossLayer() {
+        loginPage.crosslayer();
+    }
 
+    
 
 
 

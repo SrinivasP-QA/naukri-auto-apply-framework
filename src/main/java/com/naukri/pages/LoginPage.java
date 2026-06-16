@@ -16,7 +16,7 @@ public class LoginPage {
     }
 
     // Locators
-    private By loginButtonHome = By.id("login_Layer");
+    private By loginButtonHome = By.xpath("//a[text()='Login']");
 
     private By email =
             By.xpath("//input[@placeholder='Enter your active Email ID / Username']");
@@ -29,7 +29,7 @@ public class LoginPage {
 
 
     private By completeProfile = 
-            By.xpath("//a[text()='Complete']");      
+            By.xpath("//a[@href='/mnjuser/profile']");      
             
     private By editontheme = 
             By.xpath("//em[text()='editOneTheme']");
@@ -39,6 +39,12 @@ public class LoginPage {
             
     private By lastupdate = 
             By.xpath("//span[@class='typ-14Regular mode-date-wrap ']");
+
+    private By crosslayer = 
+            By.xpath("//div[@class='success-message-container']/parent::div/preceding-sibling::div/span");    
+    
+    private By profileupdate =
+            By.xpath("//span[text()='Profile updated successfully']");        
             
                    
 
@@ -97,6 +103,15 @@ public class LoginPage {
         String lastUpdate = driver.findElement(lastupdate).getText();
         System.out.println("Last Update Time: " + lastUpdate);
         return lastUpdate;
+
+        
+    }
+
+    public void crosslayer(){
+        waitUtils.click(crosslayer);
+        System.out.println("Cross Layer Clicked");
+
+      
     }
 
 }
